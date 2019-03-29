@@ -1,0 +1,22 @@
+# OpenWrt fw3 - firewall Config see http://wiki.openwrt.org/doc/uci
+# vim: foldmethod=marker foldmarker=#<,#> ts=4 sw=4 expandtab foldminlines=2
+
+config rule #< Allow DHCP - lan
+    option name     lan-DHCP
+    option src      lan
+    option proto        udp
+    list   dest_port    67
+    list   dest_port    68
+    list   dest_port    4011
+    option family       ipv4
+    option target       ACCEPT
+#>
+config rule #< Allow DHCP proxy - lan
+    option name     lan-DHCP
+    option src      lan
+    option proto        udp
+    list   src_port     68
+    list   src_port     4011
+    option family       ipv4
+    option target       ACCEPT
+#>

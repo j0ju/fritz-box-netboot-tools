@@ -1,0 +1,15 @@
+config dnsmasq 'main'
+  # this injects "bind-dynamic" into the config generated
+  # by OpenWRTs init script
+	option localservice '1'
+	option nonwildcard '1'
+
+  # specify interfaces explicitly to be served by OpenWRTs dnsmasq
+  #list interface    'lan'
+  list interface    'guest'
+
+# disable interface explicitly where DHCP proxy should run
+config dhcp 'lan'
+	option interface   'lanup'
+	option force        1
+	option ignore     '1'

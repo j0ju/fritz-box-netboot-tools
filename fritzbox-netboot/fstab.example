@@ -1,0 +1,7 @@
+# /etc/fstab: static file system information.
+#
+
+# systemd automount entry for Fritz!NAS
+#  * assumes a user 'tftp' with password '69/udp' that has access to folders /grub /images
+
+//fritz.box/fritz                         /media/fritz.box/tftp   cifs    rprivate,rw,user=tftp,pass=69/udp,uid=65534,gid=996,vers=1.0,nounix,file_mode=0660,dir_mode=0770,x-systemd.automount,x-systemd.idle-timeout=300 0 0
