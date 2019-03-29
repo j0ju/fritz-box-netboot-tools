@@ -10,10 +10,11 @@ fi
 
 sh mk-grub-i386-pc-core.sh
 
-ssh "$HOST" ' set -x;
-  mkdir -p /srv/tftp/grub/i386-pc;
+ssh "$HOST" "set -x;
+  mkdir -p  /srv/tftp/grub/i386-pc;
   chmod 755 /srv /srv/tftp /srv/tftp/grub /srv/tftp/grub/i386-pc;
-'
+  rm -f     /srv/tftp/grub/i386-pc/core.0;
+"
 
 scp grub-i386-pc-core.0 "$HOST:/srv/tftp/grub/i386-pc/core.0"
 

@@ -1,0 +1,4 @@
+# GRUB Environment Block
+default=local-grub2
+timeout=5
+#
